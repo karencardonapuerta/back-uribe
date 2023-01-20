@@ -6,7 +6,7 @@ const cliente = dataBase.define('registro', {
         type: DataTypes.STRING
     },
     documento: {
-        type: DataTypes.STRING
+        type: DataTypes.INTEGER
     },
     nombre: {
         type: DataTypes.STRING
@@ -15,7 +15,7 @@ const cliente = dataBase.define('registro', {
         type: DataTypes.STRING
     },
     fechaNacimiento: {
-        type: DataTypes.STRING
+        type: DataTypes.DATE
     },
     direccion: {
         type: DataTypes.STRING

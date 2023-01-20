@@ -1,6 +1,7 @@
 import express from 'express'
 import dataBase from './database/conexionDatabase.js';
-import clienteRouter from './routes/routerCliente.js';
+import clienteRouter from './routes/clienteRouter.js';
+
 import cors from 'cors';
 
 
@@ -17,6 +18,7 @@ try {
 app.use(cors())
 app.use(express.json())
 app.use('/cliente',clienteRouter)
+
 
 
 app.listen(port,()=>{

@@ -1,5 +1,6 @@
 import cliente from "../models/modelcliente.js";
 
+
 const crearcliente = async (req,res) => {
 try {
     await cliente.create(req.body)
@@ -43,11 +44,22 @@ const editarcliente = async (req, res) => {
     res.json({message: error.message});
 
 };
+const mostrarClientes = async (req, res) => {
+  try {
+      const clientes = await clientesModel.findAll()
+      res.json(clientes)
+  } catch (error) {
+      res.json({
+          message: `La base de datos se encuentra vacia ${error}`
+      })
+  }
+}
 
 export {
    crearcliente,
     mostrarCliente,
     eliminarcliente,
-    editarcliente
+    editarcliente,
+    mostrarClientes
 
 };
